@@ -1,0 +1,12 @@
+[Unit]
+Description=daemon for host reset
+After=wdmd.service sanlock.service
+Requires=wdmd.service sanlock.service
+
+[Service]
+Type=forking
+ExecStart=/usr/sbin/sanlk-resetd
+
+[Install]
+WantedBy=multi-user.target
+
